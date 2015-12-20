@@ -1,0 +1,26 @@
+//carlos berrios
+public class BotRace
+{
+   public static void main(String[] args)
+   {
+      BotRacer joe = new BotRacer("J");
+      BotRacer sue = new BotRacer("S");
+      BotRacer.setLength(20);
+     
+while(!joe.finished() && !sue.finished())
+{ 
+int rand_num1 = (int)(Math.random()*4+1);
+int rand_num2 = (int)(Math.random()*4+1);
+for (int i = 0; i < rand_num1; i++)
+{joe.move();}
+for (int n = 0; n < rand_num2; n++)
+{sue.move();}
+System.out.println(joe);
+System.out.println();
+System.out.println(sue);
+if (joe.finished()) {System.out.println("Joe wins");}
+else if (sue.finished()) {System.out.println("Sue wins");}
+else if (joe.finished() && sue.finished() ){System.out.println("Joe and Sue tied");}
+}
+   }
+}   
