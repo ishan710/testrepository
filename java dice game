@@ -1,0 +1,82 @@
+//carlos
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class DiceGame
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		//Declare variables here for your game
+		boolean done = false;   //The game will continue while this is false.
+		int candies = 100;      //The user starts the game with 100 candies.
+		
+		//Ask the user if they would like to play a game.  If their answer
+		//  is 'yes' or 'y' then start the game.
+      String start = JOptionPane.showInputDialog("Would you like to play a game?");
+      
+		
+		if (start.equals("Yes"))	//CHANGE the condition here to the one you want
+		{
+			
+			//This while statement will keep the game going until
+			//  the user says they are done or the game is over.
+			//  To make the game end, you need to set done = true.
+			while (!done)		
+			{
+				//Tell the player how many candies they have left, then
+				//  ask them how many candies they want to bet.
+				
+				System.out.println("You have " + candies + " candies left");
+			   String bett = JOptionPane.showInputDialog("How many candies would you like to bet?");
+			   int bet = Integer.parseInt(bett);
+				
+			
+				//This simulates the roll of a six-sided die
+				int dieValue = (int)(Math.random() * 6 + 1);
+				
+				//After the die roll, dieValue can be any number from 1 to 6.
+				//  Decide what will happen in the game based on each number.
+				//  The result must be different for each number they could roll.
+				//  Tell the user what happened based on the die roll.  Be creative!
+				
+				if (dieValue <= 3) {System.out.println("You have lost " +bet+ " candies!");candies = candies - bet;}
+            else if (dieValue >= 3) {System.out.println("You have won " +bet+ " candies!");candies = candies + bet;}
+				
+				
+				
+				
+				
+			
+			
+			
+			
+			
+			
+			
+				
+				
+				if (candies == 0) {System.out.println("Game over.");}
+            else {System.out.println("Would you like to continue playing?");}
+            Scanner in = new Scanner(System.in);
+            String cont = input.nextLine();
+            if (cont.equals("Yes")) {;}
+            else if (cont.equals("No")) {done = true;}
+				//If the user has no candy left, the game is over. 
+				//  Use the boolean variable 'done' to end the game.
+				//If they have candy, ask them if they want to keep playing.  
+				//If they answer 'no' or 'n', then stop the game and tell them
+				// how much candy they are taking home.  (If they answer
+				//  something else, do nothing and the game will continue)
+				
+				
+
+			
+			
+			}  //End of the while loop
+		}		//End of the if statement when you asked if they want to play.
+		
+  }   // End of main method
+}  //End of class
+		
